@@ -7,7 +7,7 @@ using namespace std;
 vector<int> twoSum(const vector<int>& nums, int target) {
     unordered_map<int, int> map;
     for(int i = 0; i < nums.size(); i++) {
-        int C = target - nums[i]; //Si cerca il complemento nella unordered list
+        int C = target - nums[i]; //We search for the complement in the unordered map
         if (map.find(C) != map.end()) {
             return {map[C], i};
         }
@@ -17,18 +17,18 @@ vector<int> twoSum(const vector<int>& nums, int target) {
 }
 
 int main() {
-    //Esempio di prova fornito da LeetCode
+    //Try test given by LeetCode
     vector<int> nums = {2, 7, 11, 15};
     int target = 9;
 
-    vector<int> risultato = twoSum(nums, target);
+    vector<int> result = twoSum(nums, target);
 
-    if (!risultato.empty()) {
-        cout << "Target " << target << " trovato" << endl;
-        cout << "Indici: [" << risultato[0] << ", " << risultato[1] << "]" << endl;
-        cout << "Valori: " << nums[risultato[0]] << " + " << nums[risultato[1]] << " = " << target << endl;
+    if (!result.empty()) {
+        cout << "Target " << target << " found" << endl;
+        cout << "Indexes: [" << result[0] << ", " << result[1] << "]" << endl;
+        cout << "Values: " << nums[result[0]] << " + " << nums[result[1]] << " = " << target << endl;
     } else {
-        cout << "Nessuna soluzione trovata per il target " << target << "." << endl;
+        cout << "No solution found for target " << target << "." << endl;
     }
 
     return 0;
